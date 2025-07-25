@@ -1,17 +1,17 @@
 ## Welcome To TecShastra Website 
 
-## Founder & CEO : "Amit Prajapati"
-## Co-Founder & CTO || Developer : "Vishal Suthar"
+Founder & CEO : "Amit Prajapati"
+Co-Founder & CTO || Developer : "Vishal Suthar"
 
-## Team : 
-# R&D || Marketing || Social Media : "Amit Prajapati"
-# Full-stack Developer : "Vishal Suthar"
-# Fronted Developer : "Gauri Patel"
-# Junior Developer : "Vansh Patel"
+# Team : 
+R&D || Marketing || Social Media : "Amit Prajapati"
+Full-stack Developer : "Vishal Suthar"
+Fronted Developer : "Gauri Patel"
+Junior Developer : "Vansh Patel"
 
 
-# Made By Vishal Suthar : Full Stack Developer
-# Github Link : "https://github.com/VisXhal06"
+Made By Vishal Suthar : Full Stack Developer
+Github Link : "https://github.com/VisXhal06"
 
 # 🚀 Tecshastra Website
 
@@ -21,7 +21,7 @@ A modern, responsive website built using **React** and **Tailwind CSS**, featuri
 
 ## 🌐 Live Demo
 
-👉 [View Live Site](https://your-project-name.vercel.app)  
+👉 [View Live Site](https://tec-shastra.vercel.app/)  
 _Replace with your actual URL after deployment._
 
 ---
@@ -98,7 +98,8 @@ Then open http://localhost:5173 (or as shown) in your browser.
 
 🖼️ Screenshots
 Desktop View :
-<img src = "C:\Users\Hello\Downloads\TecShastra\public\Screenshot\image.png">
+![Banner](./public/Screenshot/image.png)
+
 
 ## How can I edit this code?
 
