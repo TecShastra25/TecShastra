@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force dark mode by default */
+html {
+  @apply dark;
+}
+
+/* TecShastra Design System */
+@layer base {
+  :root {
+    /* Light Mode - Clean & Tech-Forward */
+    --background: 220 15% 97%;
+    --foreground: 240 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+    
+    /* Primary: TecShastra Tech Blue */
+    --primary: 230 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 230 100% 70%;
+    
+    /* Secondary: Tech Purple */
+    --secondary: 260 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent: Neon Cyan */
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 10% 15%;
+    
+    --muted: 220 15% 95%;
+    --muted-foreground: 240 5% 50%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 230 100% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.75rem;
+    
+    /* Custom TecShastra Variables */
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
+    --texture-overlay: 220 15% 95% / 0.5;
+    --neon-glow: 230 100% 60% / 0.3;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(230 100% 60%), hsl(260 60% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 97%), hsl(230 20% 95%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* Dark Mode - Deep Black Tech */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    
+    /* Tech Blue Primary */
+    --primary: 210 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 70%;
+    
+    /* Tech Secondary */
+    --secondary: 240 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Neon Accent */
+    --accent: 180 100% 60%;
+    --accent-foreground: 0 0% 6%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 210 100% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+    
+    /* Dark Mode Custom Variables */
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+    --texture-overlay: 0 0% 0% / 0.9;
+    --neon-glow: 210 100% 60% / 0.4;
+    
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(240 60% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 6%), hsl(0 0% 10%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0.02));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.1) 0%, transparent 50%);
+  }
+  
+  .dark body {
+    background-image: 
+      linear-gradient(45deg, transparent 35%, hsl(0 0% 8% / 0.3) 50%, transparent 65%),
+      linear-gradient(-45deg, transparent 35%, hsl(0 0% 12% / 0.2) 50%, transparent 65%),
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.1) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.08) 0%, transparent 60%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        hsl(0 0% 100% / 0.02) 2px,
+        hsl(0 0% 100% / 0.02) 4px
+      );
+  }
+}
+
+@layer components {
+  /* Glassmorphism Effects */
+  .glass {
+    @apply backdrop-blur-xl border;
+    background: hsl(var(--glass-bg));
+    border-color: hsl(var(--glass-border));
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl p-6 transition-all duration-500 hover:scale-105;
+    box-shadow: 
+      0 8px 32px hsl(var(--primary) / 0.1),
+      inset 0 1px 0 hsl(var(--glass-border));
+  }
+  
+  /* Neon Glow Effects */
+  .neon-glow {
+    box-shadow: 
+      0 0 20px hsl(var(--neon-glow)),
+      0 0 40px hsl(var(--neon-glow)),
+      inset 0 0 20px hsl(var(--neon-glow));
+  }
+  
+  .tech-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  @font-face {
+  font-family: 'Roca';
+  src: url('/fonts/Roca Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Bold';
+  src: url('/fonts/Roca Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Black';
+  src: url('/fonts/Roca Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Heavy';
+  src: url('/fonts/Roca Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Light';
+  src: url('/fonts/Roca Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Regular';
+  src: url('/fonts/Roca Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Thin';
+  src: url('/fonts/Roca Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Two Black';
+  src: url('/fonts/Roca Two Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Two Bold';
+  src: url('/fonts/Roca Two Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Two Heavy';
+  src: url('/fonts/Roca Two Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Two Light';
+  src: url('/fonts/Roca Two Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Two Regular';
+  src: url('/fonts/Roca Two Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roca Two Thin';
+  src: url('/fonts/Roca Two Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gladiola';
+  src: url('/fonts/Gladiola.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-logo-title {
+  font-family: 'Roca', 'Roca Bold', 'Roca Black', 'Roca Heavy', 'Roca Light', 'Roca Regular', 'Roca Thin', 'Roca Two Black', 'Roca Two Bold', 'Roca Two Heavy', 'Roca Two Light', 'Roca Two Regular', 'Roca Two Thin', sans-serif;
+}
+.font-logo-slogan {
+  font-family: 'Gladiola', sans-serif;
+}
+
+/* Brand-specific font classes */
+.font-segoe {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+}
+
+.font-ember {
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-product-sans {
+  font-family: 'Product Sans', 'Google Sans', Roboto, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-sf-pro {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+}
+
+.font-netflix-sans {
+  font-family: 'Netflix Sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.font-helvetica-neue {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-tesla {
+  font-family: 'Gotham', 'Proxima Nova', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.font-sony {
+  font-family: 'SST', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-myriad-pro {
+  font-family: 'Myriad Pro', 'Myriad', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-circular {
+  font-family: 'Circular Std', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-uber-move {
+  font-family: 'UberMove', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-cereal {
+  font-family: 'Cereal', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-oracle {
+  font-family: 'Oracle Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.font-ibm-plex {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-salesforce-sans {
+  font-family: 'Salesforce Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-shopify-sans {
+  font-family: 'Shopify Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-whitney {
+  font-family: 'Whitney', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-lato {
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-atlas {
+  font-family: 'Atlas Grotesk', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-camphor {
+  font-family: 'Camphor', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.font-paypal-sans {
+  font-family: 'PayPal Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-charlie {
+  font-family: 'Charlie Text', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-lexend {
+  font-family: 'Lexend', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-cooper {
+  font-family: 'Cooper Hewitt', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-neue-montreal {
+  font-family: 'Neue Montreal', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-avenir {
+  font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-madefor {
+  font-family: 'Madefor', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-open-sans {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-scroll-x {
+    animation: scroll-x 20s linear infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  /* Hover Animations */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient {
+    border-image: var(--gradient-primary) 1;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  100% { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
