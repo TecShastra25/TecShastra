@@ -99,7 +99,7 @@ Then open http://localhost:5173 (or as shown) in your browser.
 🖼️ Screenshots
 Desktop View :
 <!-- Banner Image -->
-![TecShastra Banner](https://github.com/TecShastra25/TecShastra/blob/main/public/Screenshot/image.png?raw=true)
+![TecShastra Banner](https://github.com/TecShastra25/TecShastra/blob/main/public/screenshot/image.png?raw=true)
 
 
 
