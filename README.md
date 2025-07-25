@@ -1,19 +1,31 @@
-## Welcome To TecShastra Website 
+<!-- Banner Image -->
+<p align="center">
+  <img src="https://github.com/TecShastra25/TecShastra/blob/main/public/Screenshot/image.png?raw=true" alt="TecShastra Banner" width="100%" />
+</p>
 
-Founder & CEO : "Amit Prajapati"
-Co-Founder & CTO || Developer : "Vishal Suthar"
+---
 
-# Team : 
-R&D || Marketing || Social Media : "Amit Prajapati"
-Full-stack Developer : "Vishal Suthar"
-Fronted Developer : "Gauri Patel"
-Junior Developer : "Vansh Patel"
+## 👋 Welcome to **TecShastra** Website  
 
+**Founder & CEO**: "Amit Prajapati"  
+**Co-Founder & CTO / Developer**: "Vishal Suthar"
 
-Made By Vishal Suthar : Full Stack Developer
-Github Link : "https://github.com/VisXhal06"
+---
 
-# 🚀 Tecshastra Website
+### 👥 Team  
+- 🧠 **R&D / Marketing / Social Media**: Amit Prajapati  
+- 💻 **Full-stack Developer**: Vishal Suthar  
+- 🎨 **Frontend Developer**: Gauri Patel  
+- 🧑‍💻 **Junior Developer**: Vansh Patel  
+
+---
+
+**Made By**: Vishal Suthar (Full Stack Developer)  
+**GitHub**: [VisXhal06](https://github.com/VisXhal06)
+
+---
+
+## 🚀 TecShastra Website
 
 A modern, responsive website built using **React** and **Tailwind CSS**, featuring a smooth **animated logo cloud** of trusted companies. Ideal for showcasing services, products, or partnerships with dynamic branding.
 
@@ -22,41 +34,39 @@ A modern, responsive website built using **React** and **Tailwind CSS**, featuri
 ## 🌐 Live Demo
 
 👉 [View Live Site](https://tec-shastra.vercel.app/)  
-_Replace with your actual URL after deployment._
+> _(Replace with your actual URL after deployment if changed)_
 
 ---
 
 ## ✨ Features
 
-- 🖼️ **Animated Logo Cloud** with smooth infinite scrolling
-- ⚡ **Responsive Design** optimized for all screen sizes
-- 🎨 **Modern UI** built with Tailwind CSS
-- 🧱 Scalable component structure for future expansion
-- ☁️ Easily deployable on Vercel, Netlify, or GitHub Pages
+- 🖼️ **Animated Logo Cloud** with smooth infinite scrolling  
+- ⚡ **Responsive Design** for all devices  
+- 🎨 **Modern UI** using Tailwind CSS  
+- 🧱 **Scalable Component Structure**  
+- ☁️ **Easy Deployment** on Vercel, GitHub Pages, or Netlify  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **React** – Frontend library
-- **Tailwind CSS** – Utility-first styling
-- **Lucide Icons** – Clean SVG icons
-- **Vercel** – Recommended deployment platform
+- ⚛️ **React**  
+- 🎨 **Tailwind CSS**  
+- 🧩 **Lucide Icons**  
+- ☁️ **Vercel**  
 
 ---
 
 ## 🚧 Installation
 
-Follow these steps:
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Make sure **Node.js & npm** are installed. Use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) if needed.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/TecShastra25/TecShastra.git
 
-# 2. Navigate to project folder
-cd your-repo-name
+# 2. Navigate to the folder
+cd TecShastra
 
 # 3. Install dependencies
 npm install
@@ -64,13 +74,14 @@ npm install
 # 4. Run the development server
 npm run dev
 
-Then open http://localhost:5173 (or as shown) in your browser.
-
+Now visit: http://localhost:5173
 
 📁 Folder Structure
 .
 ├── node_modules/
 ├── public/
+│   └── Screenshot/
+│       └── image.png
 ├── src/
 │   ├── components/
 │   │   ├── data/
@@ -96,46 +107,36 @@ Then open http://localhost:5173 (or as shown) in your browser.
 ├── tsconfig.app.json
 └── tsconfig.json
 
-🖼️ Screenshots
-Desktop View :
-<p align="center">
-  <img src="https://github.com/TecShastra25/TecShastra/blob/main/public/Screenshot/image.png?raw=true" alt="Header Image" width="100%" />
-</p>
-
-
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use your preferred IDE**
-
-**Suggestion : **
-
+🧑‍💻 How to Edit the Code
+🔧 Use Your Preferred IDE
 VS Code
+
 Cursor
+
 Windsurf
-And Any IDE 
 
-**Edit a file directly in GitHub**
+Any other preferred editor
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+✏️ Edit Directly in GitHub
+Open the file you want to edit
 
-**Use GitHub Codespaces**
+Click the 🖉 "Edit" button
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Commit your changes
+
+💻 Use GitHub Codespaces
+Go to the repo → Code → Codespaces tab → "New codespace"
+
+It launches a VS Code-like environment in-browser
+
+📌 License
+This project is open-source under the MIT License.
+
+🤝 Credits
+Built with ❤️ by the TecShastra Team
+Inspired by clean UI, modern web standards, and smooth animations.
 
 
-## 📌 License
-This project is open-source and available under the MIT License.
+---
 
-## 🤝 Credits
-Built with ❤️ by the Tecshastra team.
-Inspired by minimal design and smooth animations.
-
+Let me know if you'd like to also add badges (e.g., `Made with React`, `Deployed on Vercel`) or a table for contributors!
